@@ -1,0 +1,40 @@
+/* Static portfolio additions to the original design system. */
+[hidden] { display: none !important; }
+.section-space { padding-block: clamp(56px, 7vw, 100px); }
+.family-grid, .application-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.family-grid a { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--border-strong); background: white; color: var(--navy); transition: border-color .2s, background .2s; }
+.family-grid a:hover { background: var(--pale); border-color: var(--blue); }
+.family-grid b { font-family: var(--display); font-size: 48px; font-weight: 500; letter-spacing: -.04em; }
+.family-grid span { margin-bottom: 20px; }
+.family-grid small { margin-top: auto; font-family: var(--mono); color: var(--blue); }
+.application-card { background: white; border: 1px solid var(--border); }
+.application-card > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.application-card > div, .process-card { padding: clamp(20px, 3vw, 40px); }
+.process-card { background: var(--bg); border: 1px solid var(--border); }
+.process-card h2 { font-size: clamp(28px, 3vw, 42px); }
+.enquiry-box { margin-top: 32px; }
+.enquiry-list { padding-left: 22px; color: var(--muted); }
+.enquiry-list li { padding-bottom: 14px; }
+.contact-address, .site-footer a { overflow-wrap: anywhere; }
+.credit-item { padding-block: 24px; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+.credit-item h2 { font-size: 26px; }
+.spec-table { width: 100%; }
+.spec-table td, .spec-table th { overflow-wrap: anywhere; }
+.detail-notes article { padding-left: 0; }
+.hero-frame > img { object-fit: cover; }
+@media (max-width: 1024px) {
+  html:not(.js) .nav-wrap { flex-wrap: wrap; }
+  html:not(.js) #navigation { display: flex; position: static; order: 4; width: 100%; box-shadow: none; padding: 0; }
+  html:not(.js) .menu-toggle { display: none; }
+  #navigation { max-height: calc(100dvh - 120px); overflow-y: auto; }
+}
+@media (max-width: 760px) {
+  .family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .family-grid a { padding: 20px; }
+  .application-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .family-grid a { padding: 14px; }
+  .family-grid span { font-size: 14px; overflow-wrap: anywhere; }
+  .nav-quote { display: none; }
+}
